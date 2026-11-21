@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://ckudr8chj1kgo"]
+
+[ext_resource type="Script" uid="uid://vo1aet2585sx" path="res://scripts/PlayerMovement.gd" id="1_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/icon.svg" id="2_hqtel"]
+[ext_resource type="Script" uid="uid://c6rr75g2yee11" path="res://scripts/KatanaHit.gd" id="3_sweqy"]
+[ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://scripts/HealthAndTakeDamage.gd" id="4_hqtel"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1klgc"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2kh6"]
+size = Vector2(182.8125, 51.020462)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8q3k"]
+size = Vector2(192.5, 33.571426)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nijv6"]
+size = Vector2(185, 61.22444)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2j3b"]
+size = Vector2(186.875, 48.979588)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wp10"]
+size = Vector2(199.375, 35.15306)
+
+[node name="Player" type="CharacterBody2D" unique_id=1404003345]
+scale = Vector2(0.08, 0.245)
+motion_mode = 1
+platform_on_leave = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1141526292]
+texture = ExtResource("2_hqtel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1522167820]
+shape = SubResource("RectangleShape2D_1klgc")
+
+[node name="Katana" type="Node2D" parent="." unique_id=192307028]
+script = ExtResource("3_sweqy")
+
+[node name="HighHit" type="Area2D" parent="Katana" unique_id=983801354]
+
+[node name="HighHitColl" type="CollisionShape2D" parent="Katana/HighHit" unique_id=2093563989]
+position = Vector2(162.5, -58.1633)
+shape = SubResource("RectangleShape2D_w2kh6")
+disabled = true
+
+[node name="OverHitColl" type="CollisionShape2D" parent="Katana/HighHit" unique_id=1828022404]
+position = Vector2(28.75, -81.17346)
+shape = SubResource("RectangleShape2D_t8q3k")
+disabled = true
+
+[node name="MidHit" type="Area2D" parent="Katana" unique_id=830866472]
+
+[node name="MidHitColl" type="CollisionShape2D" parent="Katana/MidHit" unique_id=13138186]
+position = Vector2(162.5, -2.0408936)
+shape = SubResource("RectangleShape2D_nijv6")
+disabled = true
+
+[node name="LowHit" type="Area2D" parent="Katana" unique_id=1539758977]
+
+[node name="LowHitColl" type="CollisionShape2D" parent="Katana/LowHit" unique_id=1279413773]
+position = Vector2(162.5, 53.061203)
+shape = SubResource("RectangleShape2D_n2j3b")
+disabled = true
+
+[node name="UnderHitColl" type="CollisionShape2D" parent="Katana/LowHit" unique_id=2132512956]
+position = Vector2(37.499985, 81.63265)
+shape = SubResource("RectangleShape2D_7wp10")
+
+[node name="Movement" type="Node2D" parent="." unique_id=605833367 node_paths=PackedStringArray("player", "collision_body")]
+script = ExtResource("1_i3pqv")
+player = NodePath("../CollisionShape2D")
+collision_body = NodePath("../CollisionShape2D")
+
+[node name="HealthAndDmgTk" type="Node2D" parent="." unique_id=823205053]
+script = ExtResource("4_hqtel")

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://d0d0ff4caub5x"]
+
+[ext_resource type="Script" uid="uid://tkqe2j32ph46" path="res://scripts/water.gd" id="1_746c1"]
+[ext_resource type="Texture2D" uid="uid://beg6ssmjvgkou" path="res://assets/scene 1/water/water1.png" id="2_3g7ry"]
+[ext_resource type="Texture2D" uid="uid://dho28pf0vlnqv" path="res://assets/scene 1/water/water3.png" id="3_wox83"]
+[ext_resource type="Texture2D" uid="uid://dq7gehwaox2q5" path="res://assets/scene 1/water/water2.png" id="4_ywqbu"]
+[ext_resource type="Texture2D" uid="uid://iy82u3aa7x80" path="res://assets/scene 1/water/water4.png" id="5_hn4mu"]
+[ext_resource type="Texture2D" uid="uid://s8het3ox45je" path="res://assets/scene 1/water/foam.png" id="6_ybsgd"]
+
+[node name="water" type="Node2D" unique_id=1072951948]
+position = Vector2(96, 31)
+script = ExtResource("1_746c1")
+water2_speed = 1.2
+water3_speed = 1.4
+water4_speed = 1.6
+foam_speed = 2.0
+metadata/_edit_group_ = true
+
+[node name="Water1" type="Parallax2D" parent="." unique_id=816234766]
+repeat_size = Vector2(1, 0)
+autoscroll = Vector2(1, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Water1" unique_id=2024808174]
+texture = ExtResource("2_3g7ry")
+
+[node name="Water3" type="Parallax2D" parent="." unique_id=1671207917]
+repeat_size = Vector2(1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Water3" unique_id=1845003463]
+texture = ExtResource("4_ywqbu")
+
+[node name="Water2" type="Parallax2D" parent="." unique_id=1882068922]
+repeat_size = Vector2(1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Water2" unique_id=1523832930]
+texture = ExtResource("3_wox83")
+
+[node name="Water4" type="Parallax2D" parent="." unique_id=1846928939]
+repeat_size = Vector2(1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Water4" unique_id=1279103753]
+texture = ExtResource("5_hn4mu")
+
+[node name="Foam" type="Parallax2D" parent="." unique_id=863151338]
+repeat_size = Vector2(1.96, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Foam" unique_id=1938362986]
+texture = ExtResource("6_ybsgd")

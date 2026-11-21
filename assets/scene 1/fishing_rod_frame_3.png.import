@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ujwhw65kf5be"
-path="res://.godot/imported/boat.png-ee58a95610b67d7993b39f0358510a88.ctex"
+uid="uid://bjc4pxjmmssrb"
+path="res://.godot/imported/fishing_rod_frame_3.png-11d1ddaf7050e5c2e048bd7669a7e117.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/boat.png"
-dest_files=["res://.godot/imported/boat.png-ee58a95610b67d7993b39f0358510a88.ctex"]
+source_file="res://assets/scene 1/fishing_rod_frame_3.png"
+dest_files=["res://.godot/imported/fishing_rod_frame_3.png-11d1ddaf7050e5c2e048bd7669a7e117.ctex"]
 
 [params]
 

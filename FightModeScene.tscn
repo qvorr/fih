@@ -1,26 +1,13 @@
 [gd_scene format=3 uid="uid://4pqund3nukl7"]
 
-[ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="1_y37ji"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/icon.svg" id="2_7wp10"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1klgc"]
-size = Vector2(128, 128)
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_rnk63"]
+[ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://scripts/HealthAndTakeDamage.gd" id="2_y37ji"]
 
 [node name="FightModeScene" type="Node2D" unique_id=1821662636]
-modulate = Color(0, 1, 1, 1)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=952579625]
-position = Vector2(112, 63.000046)
-scale = Vector2(0.08, 0.245)
-motion_mode = 1
-platform_on_leave = 2
-script = ExtResource("1_y37ji")
-SPEED = 50
-FRICTION = 190.0
-metadata/_edit_group_ = true
+[node name="Player" parent="." unique_id=1404003345 instance=ExtResource("1_rnk63")]
+position = Vector2(48, 54)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1927576328]
-texture = ExtResource("2_7wp10")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1602779084]
-shape = SubResource("RectangleShape2D_1klgc")
+[node name="Enemy" parent="." unique_id=892226742 instance=ExtResource("1_rnk63")]
+position = Vector2(120, 54)
+script = ExtResource("2_y37ji")
