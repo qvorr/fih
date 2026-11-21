@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://4pqund3nukl7"]
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_rnk63"]
+[ext_resource type="PackedScene" uid="uid://d0d0ff4caub5x" path="res://water.tscn" id="2_iunqc"]
 [ext_resource type="Texture2D" uid="uid://2v85225wdns5" path="res://assets/scene 2/0-sky.png" id="3_iunqc"]
 [ext_resource type="Texture2D" uid="uid://ctgpggsfb8lnr" path="res://assets/scene 2/1-water.png" id="4_fcmcs"]
 [ext_resource type="Texture2D" uid="uid://b1quwudqaffqx" path="res://assets/scene 2/2-water.png" id="5_g1de4"]
@@ -12,17 +13,36 @@
 [ext_resource type="Texture2D" uid="uid://banmqi8awsiof" path="res://assets/scene 2/8-coralR.png" id="11_komj2"]
 [ext_resource type="Texture2D" uid="uid://dn4ch7ssfl4a" path="res://assets/scene 2/9-rockL.png" id="12_louek"]
 [ext_resource type="Texture2D" uid="uid://dffcbn7n876d2" path="res://assets/scene 2/10-coralL.png" id="13_dd2gj"]
+[ext_resource type="Script" uid="uid://beuabb78208xl" path="res://scripts/PlayerController.gd" id="14_c3ulk"]
+[ext_resource type="Script" uid="uid://c6extovu2br4n" path="res://scripts/BoAtI.gd" id="17_wusjp"]
 
 [node name="FightModeScene" type="Node2D" unique_id=1821662636]
+
+[node name="0 - sky" type="Sprite2D" parent="." unique_id=746907427]
+position = Vector2(96, 54)
+texture = ExtResource("3_iunqc")
+metadata/_edit_group_ = true
+
+[node name="water" parent="." unique_id=1072951948 instance=ExtResource("2_iunqc")]
+position = Vector2(95, -18)
+foam_speed = 0.0
+all_speed = 2.43
+
+[node name="Water3" parent="water" index="1" unique_id=1671207917]
+visible = false
+
+[node name="Water2" parent="water" index="2" unique_id=1882068922]
+visible = false
+
+[node name="Water4" parent="water" index="3" unique_id=1846928939]
+visible = false
 
 [node name="Background" type="Node2D" parent="." unique_id=688010536]
 position = Vector2(96, 54)
 metadata/_edit_group_ = true
 
-[node name="0 - sky" type="Sprite2D" parent="Background" unique_id=746907427]
-texture = ExtResource("3_iunqc")
-
 [node name="1 - water" type="Sprite2D" parent="Background" unique_id=530456129]
+visible = false
 texture = ExtResource("4_fcmcs")
 
 [node name="2 - water" type="Sprite2D" parent="Background" unique_id=1000651512]
@@ -53,18 +73,26 @@ texture = ExtResource("12_louek")
 texture = ExtResource("13_dd2gj")
 
 [node name="Player" parent="." unique_id=1404003345 instance=ExtResource("1_rnk63")]
-position = Vector2(120, 52)
+position = Vector2(59.000004, 58)
 metadata/_edit_group_ = true
 
-[node name="Katana" parent="Player" index="2" unique_id=192307028]
-script = null
+[node name="Movement" parent="Player" index="3" unique_id=605833367 node_paths=PackedStringArray("target")]
+target = NodePath("../../Enemy")
 
-[node name="Movement" parent="Player" index="3" unique_id=605833367]
-script = null
+[node name="PlayerController" type="Node2D" parent="Player" unique_id=796216977]
+script = ExtResource("14_c3ulk")
 
 [node name="Enemy" parent="." unique_id=892226742 instance=ExtResource("1_rnk63")]
-position = Vector2(60, 57)
+position = Vector2(128, 57)
 metadata/_edit_group_ = true
 
+[node name="Movement" parent="Enemy" index="3" unique_id=605833367 node_paths=PackedStringArray("target")]
+target = NodePath("../../Player")
+
+[node name="BoAtI" type="Node2D" parent="Enemy" unique_id=752052955 node_paths=PackedStringArray("target")]
+script = ExtResource("17_wusjp")
+target = NodePath("../../Player")
+
+[editable path="water"]
 [editable path="Player"]
 [editable path="Enemy"]

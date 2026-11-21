@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://gj5h5l2deuuf" path="res://assets/scene 2/attack-up-swoosh.png" id="5_dw050"]
 [ext_resource type="Texture2D" uid="uid://ccpcq74d6iifo" path="res://assets/scene 2/attack-mid-swoosh.png" id="7_n7ghd"]
 [ext_resource type="Texture2D" uid="uid://b0yp32i5fp8b4" path="res://assets/scene 2/attack-down-swoosh.png" id="8_nvl01"]
+[ext_resource type="Texture2D" uid="uid://c08piqvlnqqfn" path="res://assets/scene 2/block-up.png" id="9_bwjto"]
+[ext_resource type="Texture2D" uid="uid://ci747wf3mtusg" path="res://assets/scene 2/bloc-up-spark.png" id="10_606se"]
+[ext_resource type="Texture2D" uid="uid://cbwem1an1u07" path="res://assets/scene 2/block-down.png" id="11_u1c27"]
+[ext_resource type="Texture2D" uid="uid://7u1ecva644er" path="res://assets/scene 2/block-down-spark.png" id="12_op7ga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1klgc"]
 size = Vector2(61.2245, 112.69388)
@@ -29,6 +33,12 @@ size = Vector2(66.68814, 61.965973)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wp10"]
 size = Vector2(44.897957, 42.066322)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58877"]
+size = Vector2(19.658182, 102.04083)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdlqx"]
+size = Vector2(19.459194, 86.77551)
+
 [node name="Player" type="CharacterBody2D" unique_id=1404003345]
 position = Vector2(32.915, 35.93)
 scale = Vector2(0.245, 0.245)
@@ -41,9 +51,8 @@ shape = SubResource("RectangleShape2D_1klgc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1141526292]
 scale = Vector2(3.755, 3.755)
-texture = ExtResource("5_b26j0")
-centered = false
-offset = Vector2(-50.595, -60.05)
+texture = ExtResource("1_hqtel")
+offset = Vector2(17.465, 5.26)
 
 [node name="Katana" type="Node2D" parent="." unique_id=192307028]
 script = ExtResource("3_sweqy")
@@ -54,6 +63,10 @@ mid_tex = ExtResource("4_dw050")
 mid_swoosh_tex = ExtResource("7_n7ghd")
 low_tex = ExtResource("5_b26j0")
 low_swoosh_tex = ExtResource("8_nvl01")
+high_block = ExtResource("9_bwjto")
+high_block_spark = ExtResource("10_606se")
+low_block = ExtResource("11_u1c27")
+low_block_spark = ExtResource("12_op7ga")
 
 [node name="HighHit" type="Area2D" parent="Katana" unique_id=983801354]
 
@@ -84,6 +97,20 @@ disabled = true
 [node name="UnderHitColl" type="CollisionShape2D" parent="Katana/LowHit" unique_id=2132512956]
 position = Vector2(39.12245, 85.375015)
 shape = SubResource("RectangleShape2D_7wp10")
+disabled = true
+
+[node name="BlockHigh" type="Area2D" parent="Katana" unique_id=1263869760]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Katana/BlockHigh" unique_id=1231492728]
+position = Vector2(55.823975, -34.408173)
+shape = SubResource("RectangleShape2D_58877")
+disabled = true
+
+[node name="BlockLow" type="Area2D" parent="Katana" unique_id=526053167]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Katana/BlockLow" unique_id=495452172]
+position = Vector2(55.923462, 60)
+shape = SubResource("RectangleShape2D_fdlqx")
 disabled = true
 
 [node name="Movement" type="Node2D" parent="." unique_id=605833367]
