@@ -1,13 +1,70 @@
 [gd_scene format=3 uid="uid://4pqund3nukl7"]
 
 [ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_rnk63"]
-[ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://scripts/HealthAndTakeDamage.gd" id="2_y37ji"]
+[ext_resource type="Texture2D" uid="uid://2v85225wdns5" path="res://assets/scene 2/0-sky.png" id="3_iunqc"]
+[ext_resource type="Texture2D" uid="uid://ctgpggsfb8lnr" path="res://assets/scene 2/1-water.png" id="4_fcmcs"]
+[ext_resource type="Texture2D" uid="uid://b1quwudqaffqx" path="res://assets/scene 2/2-water.png" id="5_g1de4"]
+[ext_resource type="Texture2D" uid="uid://c6oa2oxy7v7da" path="res://assets/scene 2/3-water.png" id="6_f0som"]
+[ext_resource type="Texture2D" uid="uid://chufacelh6r20" path="res://assets/scene 2/4-water.png" id="7_c3ulk"]
+[ext_resource type="Texture2D" uid="uid://dl31m84alvmok" path="res://assets/scene 2/5-water.png" id="8_wusjp"]
+[ext_resource type="Texture2D" uid="uid://cis3eu4ttmo6s" path="res://assets/scene 2/6-sand.png" id="9_sie7l"]
+[ext_resource type="Texture2D" uid="uid://d0ip7s6lmh3ef" path="res://assets/scene 2/7-rockR.png" id="10_nlbng"]
+[ext_resource type="Texture2D" uid="uid://banmqi8awsiof" path="res://assets/scene 2/8-coralR.png" id="11_komj2"]
+[ext_resource type="Texture2D" uid="uid://dn4ch7ssfl4a" path="res://assets/scene 2/9-rockL.png" id="12_louek"]
+[ext_resource type="Texture2D" uid="uid://dffcbn7n876d2" path="res://assets/scene 2/10-coralL.png" id="13_dd2gj"]
 
 [node name="FightModeScene" type="Node2D" unique_id=1821662636]
 
+[node name="Background" type="Node2D" parent="." unique_id=688010536]
+position = Vector2(96, 54)
+metadata/_edit_group_ = true
+
+[node name="0 - sky" type="Sprite2D" parent="Background" unique_id=746907427]
+texture = ExtResource("3_iunqc")
+
+[node name="1 - water" type="Sprite2D" parent="Background" unique_id=530456129]
+texture = ExtResource("4_fcmcs")
+
+[node name="2 - water" type="Sprite2D" parent="Background" unique_id=1000651512]
+texture = ExtResource("5_g1de4")
+
+[node name="3 - water" type="Sprite2D" parent="Background" unique_id=1270559185]
+texture = ExtResource("6_f0som")
+
+[node name="4 - water" type="Sprite2D" parent="Background" unique_id=95030920]
+texture = ExtResource("7_c3ulk")
+
+[node name="5 - water" type="Sprite2D" parent="Background" unique_id=504122404]
+texture = ExtResource("8_wusjp")
+
+[node name="6 - water" type="Sprite2D" parent="Background" unique_id=9994490]
+texture = ExtResource("9_sie7l")
+
+[node name="7 - water" type="Sprite2D" parent="Background" unique_id=684527046]
+texture = ExtResource("10_nlbng")
+
+[node name="8 - water" type="Sprite2D" parent="Background" unique_id=81289905]
+texture = ExtResource("11_komj2")
+
+[node name="9 - water" type="Sprite2D" parent="Background" unique_id=1900793361]
+texture = ExtResource("12_louek")
+
+[node name="10 - water" type="Sprite2D" parent="Background" unique_id=259091982]
+texture = ExtResource("13_dd2gj")
+
 [node name="Player" parent="." unique_id=1404003345 instance=ExtResource("1_rnk63")]
-position = Vector2(48, 54)
+position = Vector2(120, 52)
+metadata/_edit_group_ = true
+
+[node name="Katana" parent="Player" index="2" unique_id=192307028]
+script = null
+
+[node name="Movement" parent="Player" index="3" unique_id=605833367]
+script = null
 
 [node name="Enemy" parent="." unique_id=892226742 instance=ExtResource("1_rnk63")]
-position = Vector2(120, 54)
-script = ExtResource("2_y37ji")
+position = Vector2(60, 57)
+metadata/_edit_group_ = true
+
+[editable path="Player"]
+[editable path="Enemy"]

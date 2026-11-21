@@ -1,6 +1,6 @@
 extends AnimatableBody2D
 
-@export var distance := 1.0   # Change to e.g. 50.0 to see it clearly
+@export var distance := 1.0  
 @export var step_time := 0.2 * 100 # Seconds per side
 
 func _ready() -> void:

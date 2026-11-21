@@ -30,5 +30,5 @@ func _physics_process(delta: float) -> void:
 	player.move_and_slide()
 	
 	# keeps the character from moving outside the frame, and accounts for character size
-	var half_size = (player_shape.shape.get_rect().size * player.global_scale) / 2.0
-	player_shape.position = player.position.clamp(half_size, get_viewport_rect().size - half_size)
+	var half_size = (player_shape.shape.get_rect().size * player_shape.global_scale) / 2.0
+	player.position = player.position.clamp(half_size, get_viewport_rect().size - half_size)

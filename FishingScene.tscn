@@ -25,16 +25,16 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 3.0,
+"duration": 0.5,
 "texture": ExtResource("7_tobc7")
 }, {
 "duration": 3.0,
 "texture": ExtResource("8_431q5")
 }, {
-"duration": 3.0,
+"duration": 0.5,
 "texture": ExtResource("9_fdsps")
 }, {
-"duration": 3.0,
+"duration": 6.0,
 "texture": ExtResource("10_iuw0o")
 }],
 "loop": 1,
@@ -52,7 +52,8 @@ texture = ExtResource("4_egw1k")
 [node name="boat" type="AnimatableBody2D" parent="." unique_id=60449869]
 position = Vector2(90, 53)
 script = ExtResource("2_3qtlo")
-step_time = 2.0
+distance = 1.1
+step_time = 0.8
 
 [node name="BoatCollider" type="CollisionShape2D" parent="boat" unique_id=1244556774]
 position = Vector2(0, 14.32)
@@ -65,7 +66,7 @@ texture = ExtResource("3_v62h4")
 offset = Vector2(6, -1)
 
 [node name="Player" type="CharacterBody2D" parent="boat" unique_id=696843904]
-position = Vector2(3, -4)
+position = Vector2(4, -2)
 scale = Vector2(0.5, 0.5)
 metadata/_edit_group_ = true
 
@@ -90,6 +91,7 @@ position = Vector2(98.99999, 54.999996)
 sprite_frames = SubResource("SpriteFrames_w2kh6")
 animation = &"fishing_rod"
 autoplay = "fishing_rod"
+frame_progress = 0.8088739
 
 [node name="water" parent="." unique_id=1072951948 instance=ExtResource("5_egw1k")]
 z_index = 6

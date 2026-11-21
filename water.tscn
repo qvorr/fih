@@ -13,7 +13,8 @@ script = ExtResource("1_746c1")
 water2_speed = 1.2
 water3_speed = 1.4
 water4_speed = 1.6
-foam_speed = 2.0
+foam_speed = 1.8
+all_speed = 4.0
 metadata/_edit_group_ = true
 
 [node name="Water1" type="Parallax2D" parent="." unique_id=816234766]
