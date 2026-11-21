@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 
-const SPEED = 300
+@export var SPEED = 50
 # const JUMP_VELOCITY = -400.0
-@export_range(0, 1000, 10) var FRICTION = 800.0
+@export_range(0, 1000, 10) var FRICTION = 190
 
 
 func _physics_process(delta: float) -> void:

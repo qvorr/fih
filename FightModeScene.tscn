@@ -15,6 +15,8 @@ scale = Vector2(0.08, 0.245)
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_y37ji")
+SPEED = 50
+FRICTION = 190.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1927576328]

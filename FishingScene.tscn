@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ujwhw65kf5be" path="res://assets/boat.png" id="1_ghtpf"]
 [ext_resource type="Script" uid="uid://cevliku7ntv51" path="res://animate_boat.gd" id="2_3qtlo"]
+[ext_resource type="Texture2D" uid="uid://dc0o4fu7tb6n8" path="res://assets/boat2.png" id="3_3qtlo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2kh6"]
 size = Vector2(105, 48)
@@ -34,4 +35,4 @@ shape = SubResource("RectangleShape2D_nijv6")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=1647082775]
 texture_filter = 1
-texture = ExtResource("1_ghtpf")
+texture = ExtResource("3_3qtlo")
