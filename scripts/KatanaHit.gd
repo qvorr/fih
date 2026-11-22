@@ -14,8 +14,6 @@ var SWOOSH_WINDOW = 0.1
 @export var high_block_spark: Texture2D
 @export var low_block: Texture2D
 @export var low_block_spark: Texture2D
-@export var spark_high_tex: Texture2D;
-@export var spark_low_tex: Texture2D;
 
 @onready var sprite: Sprite2D = get_parent().get_node("Sprite2D")
 

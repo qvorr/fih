@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cabtv7ow1cky2"]
+
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_km4in"]
+[ext_resource type="Texture2D" uid="uid://pvpgebvcjcc4" path="res://assets/scene 2/fih1/fih1-idle.png" id="2_ft0mf"]
+[ext_resource type="Texture2D" uid="uid://bby81qbio67s1" path="res://assets/scene 2/fih1/fih1-up.png" id="3_pulw8"]
+[ext_resource type="Texture2D" uid="uid://p7cuwrpsdh0w" path="res://assets/scene 2/fih1/fih1-up-sw.png" id="4_uv77k"]
+[ext_resource type="Texture2D" uid="uid://bjay10wpqaagt" path="res://assets/scene 2/fih1/fih1-mid.png" id="5_ivmqo"]
+[ext_resource type="Texture2D" uid="uid://cvvqqyqd02i3u" path="res://assets/scene 2/fih1/fih1-mid-sw.png" id="6_ehhea"]
+[ext_resource type="Texture2D" uid="uid://dunuc1qisdlv2" path="res://assets/scene 2/fih1/fih1-down.png" id="7_i1xc2"]
+[ext_resource type="Texture2D" uid="uid://dp4erw0sngeyf" path="res://assets/scene 2/fih1/fih1-down-sw.png" id="8_h3jyn"]
+[ext_resource type="Script" uid="uid://c6extovu2br4n" path="res://scripts/BoAtI.gd" id="9_ft0mf"]
+
+[node name="Player" unique_id=1404003345 instance=ExtResource("1_km4in")]
+
+[node name="Sprite2D" parent="." index="1" unique_id=1141526292]
+position = Vector2(-20.061228, 8.448978)
+texture = ExtResource("2_ft0mf")
+
+[node name="Katana" parent="." index="2" unique_id=192307028]
+idle_tex = ExtResource("2_ft0mf")
+high_tex = ExtResource("3_pulw8")
+high_swoosh_tex = ExtResource("4_uv77k")
+mid_tex = ExtResource("5_ivmqo")
+mid_swoosh_tex = ExtResource("6_ehhea")
+low_tex = ExtResource("7_i1xc2")
+low_swoosh_tex = ExtResource("8_h3jyn")
+high_block = ExtResource("2_ft0mf")
+high_block_spark = ExtResource("2_ft0mf")
+low_block = ExtResource("2_ft0mf")
+low_block_spark = ExtResource("2_ft0mf")
+
+[node name="BotAI" type="Node2D" parent="." index="5" unique_id=290338373]
+script = ExtResource("9_ft0mf")

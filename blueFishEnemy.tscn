@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://c078ng5kuc76r"]
+
+[ext_resource type="PackedScene" uid="uid://ckudr8chj1kgo" path="res://player.tscn" id="1_vm4nk"]
+[ext_resource type="Texture2D" uid="uid://4gux5v4n83if" path="res://assets/scene 2/fih2/fih2-idle.png" id="2_jdcyv"]
+[ext_resource type="Texture2D" uid="uid://dr25147yy4v48" path="res://assets/scene 2/fih2/fih2-up.png" id="3_tvlr6"]
+[ext_resource type="Texture2D" uid="uid://dbh2ntlko3gjb" path="res://assets/scene 2/fih2/fih2-up-sw.png" id="4_3iyj5"]
+[ext_resource type="Texture2D" uid="uid://c0op15g5scqgc" path="res://assets/scene 2/fih2/fih2-mid.png" id="5_cpxco"]
+[ext_resource type="Texture2D" uid="uid://u7u6gg7r18y" path="res://assets/scene 2/fih2/fih2-mid-sw.png" id="6_ojhai"]
+[ext_resource type="Texture2D" uid="uid://ct5jyhrada3b5" path="res://assets/scene 2/fih2/fih2-down.png" id="7_u1wdr"]
+[ext_resource type="Texture2D" uid="uid://kp0im4rcpxot" path="res://assets/scene 2/fih2/fih2-down-sw.png" id="8_o5nsn"]
+[ext_resource type="Script" uid="uid://c6extovu2br4n" path="res://scripts/BoAtI.gd" id="9_tvlr6"]
+
+[node name="BlueFish" unique_id=1404003345 instance=ExtResource("1_vm4nk")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1522167820]
+scale = Vector2(1, 0.865)
+
+[node name="Sprite2D" parent="." index="1" unique_id=1141526292]
+position = Vector2(8.510199, 0.28571892)
+scale = Vector2(2.3682106, 2.3682106)
+texture = ExtResource("2_jdcyv")
+
+[node name="Katana" parent="." index="2" unique_id=192307028]
+idle_tex = ExtResource("2_jdcyv")
+high_tex = ExtResource("3_tvlr6")
+high_swoosh_tex = ExtResource("4_3iyj5")
+mid_tex = ExtResource("5_cpxco")
+mid_swoosh_tex = ExtResource("6_ojhai")
+low_tex = ExtResource("7_u1wdr")
+low_swoosh_tex = ExtResource("8_o5nsn")
+high_block = ExtResource("2_jdcyv")
+high_block_spark = ExtResource("2_jdcyv")
+low_block = ExtResource("2_jdcyv")
+low_block_spark = ExtResource("2_jdcyv")
+
+[node name="BotAI" type="Node2D" parent="." index="5" unique_id=628510089]
+script = ExtResource("9_tvlr6")
