@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://dn4ch7ssfl4a" path="res://assets/scene 2/9-rockL.png" id="12_louek"]
 [ext_resource type="Texture2D" uid="uid://dffcbn7n876d2" path="res://assets/scene 2/10-coralL.png" id="13_dd2gj"]
 [ext_resource type="Script" uid="uid://beuabb78208xl" path="res://scripts/PlayerController.gd" id="14_c3ulk"]
+[ext_resource type="Texture2D" uid="uid://ci747wf3mtusg" path="res://assets/scene 2/bloc-up-spark.png" id="14_wusjp"]
+[ext_resource type="Texture2D" uid="uid://7u1ecva644er" path="res://assets/scene 2/block-down-spark.png" id="15_sie7l"]
 [ext_resource type="Script" uid="uid://c6extovu2br4n" path="res://scripts/BoAtI.gd" id="17_wusjp"]
 
 [node name="FightModeScene" type="Node2D" unique_id=1821662636]
@@ -76,8 +78,15 @@ texture = ExtResource("13_dd2gj")
 position = Vector2(59.000004, 58)
 metadata/_edit_group_ = true
 
+[node name="Katana" parent="Player" index="2" unique_id=192307028]
+spark_high_tex = ExtResource("14_wusjp")
+spark_low_tex = ExtResource("15_sie7l")
+
 [node name="Movement" parent="Player" index="3" unique_id=605833367 node_paths=PackedStringArray("target")]
 target = NodePath("../../Enemy")
+
+[node name="HealthAndDmgTk" parent="Player" index="4" unique_id=823205053]
+isPlayer = true
 
 [node name="PlayerController" type="Node2D" parent="Player" unique_id=796216977]
 script = ExtResource("14_c3ulk")
@@ -92,6 +101,9 @@ target = NodePath("../../Player")
 [node name="BoAtI" type="Node2D" parent="Enemy" unique_id=752052955 node_paths=PackedStringArray("target")]
 script = ExtResource("17_wusjp")
 target = NodePath("../../Player")
+
+[connection signal="body_entered" from="Player/Katana/BlockHigh" to="Player/HealthAndDmgTk" method="_on_block_entered"]
+[connection signal="body_entered" from="Player/Katana/BlockLow" to="Player/HealthAndDmgTk" method="_on_block_entered"]
 
 [editable path="water"]
 [editable path="Player"]

@@ -1,6 +1,6 @@
 extends Node2D
 @export var ATTACK_WINDOW = 0.3
-@export var BLOCK_WINDOW = 0.2
+@export var BLOCK_WINDOW = 0.6
 var SWOOSH_WINDOW = 0.1
 @export var COOLDOWN_WINDOW = 0.2
 @export var idle_tex: Texture2D
@@ -14,11 +14,15 @@ var SWOOSH_WINDOW = 0.1
 @export var high_block_spark: Texture2D
 @export var low_block: Texture2D
 @export var low_block_spark: Texture2D
+@export var spark_high_tex: Texture2D;
+@export var spark_low_tex: Texture2D;
 
 @onready var sprite: Sprite2D = get_parent().get_node("Sprite2D")
 
 var isAttacking = false
 var isBlocking = false
+var isHighBlocking = false
+var isLowBlocking = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -105,8 +109,10 @@ func block_high():
 	$BlockHigh/CollisionShape2D.disabled = false
 	sprite.texture = high_block
 	isBlocking = true
+	isHighBlocking = true
 	await get_tree().create_timer(BLOCK_WINDOW).timeout
 	isBlocking = false
+	isHighBlocking = false
 	sprite.texture = idle_tex
 	$BlockHigh/CollisionShape2D.disabled = true
 	print("block-high")
@@ -118,8 +124,10 @@ func block_low():
 	$BlockLow/CollisionShape2D.disabled = false
 	sprite.texture = low_block
 	isBlocking = true
+	isLowBlocking = true
 	await get_tree().create_timer(BLOCK_WINDOW).timeout
 	isBlocking = false
+	isLowBlocking = false
 	sprite.texture = idle_tex
 	$BlockLow/CollisionShape2D.disabled = true
 	print("block-low")

@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://2ja345c2fgju"]
+
+[ext_resource type="Texture2D" uid="uid://c163sxgrjvm2w" path="res://assets/scene 3/scene-3-frame--0.png" id="1_frr4j"]
+[ext_resource type="Texture2D" uid="uid://dyqjafq0dkvbp" path="res://assets/scene 3/scene-3-frame--1.png" id="2_83b05"]
+[ext_resource type="Texture2D" uid="uid://kx0mijisuwkg" path="res://assets/scene 3/scene-3-frame--2.png" id="3_4k08g"]
+[ext_resource type="Texture2D" uid="uid://b2ogwe8giddtr" path="res://assets/scene 3/scene-3-frame--3.png" id="4_kfqx5"]
+[ext_resource type="Texture2D" uid="uid://cqsbv1d853hf3" path="res://assets/scene 3/scene-3-frame--4.png" id="5_qx40c"]
+[ext_resource type="Texture2D" uid="uid://cwv2kkpeb0ep0" path="res://assets/scene 3/scene-3-frame--5.png" id="6_tsjio"]
+[ext_resource type="Texture2D" uid="uid://cevsdc053wqmu" path="res://assets/scene 3/scene-3-frame--6.png" id="7_rh52s"]
+[ext_resource type="Texture2D" uid="uid://dq1rykwunx2bc" path="res://assets/scene 3/scene-3-frame--7.png" id="8_i5l06"]
+[ext_resource type="Texture2D" uid="uid://dvypty0c76ivd" path="res://assets/scene 3/scene-3-frame--8.png" id="9_stmph"]
+[ext_resource type="Texture2D" uid="uid://ewrot3fatvv6" path="res://assets/scene 3/scene-3-frame--9.png" id="10_bym44"]
+[ext_resource type="Texture2D" uid="uid://c43ip61o4u8vj" path="res://assets/scene 3/scene-3-frame--10.png" id="11_t22i5"]
+[ext_resource type="Texture2D" uid="uid://dhssx0en5h02i" path="res://assets/scene 3/scene-3-frame--11.png" id="12_hv5vx"]
+[ext_resource type="Script" uid="uid://b06rr3h14gbg7" path="res://catchbar.gd" id="13_83b05"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2kh6"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_frr4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_83b05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4k08g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kfqx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qx40c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tsjio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rh52s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i5l06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_stmph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bym44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_t22i5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hv5vx")
+}],
+"loop": 1,
+"name": &"fischer",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=589251405]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=905209152]
+sprite_frames = SubResource("SpriteFrames_w2kh6")
+animation = &"fischer"
+autoplay = "fischer"
+offset = Vector2(96.595, 53.96)
+
+[node name="FishingBar" type="Control" parent="." unique_id=2033708242]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 165.0
+offset_top = 9.0
+offset_right = 187.0
+offset_bottom = 102.0
+
+[node name="Catchbar" type="ColorRect" parent="FishingBar" unique_id=839611395]
+layout_mode = 0
+offset_top = 66.0
+offset_right = 22.0
+offset_bottom = 93.0
+color = Color(0, 0.84705883, 0, 1)
+script = ExtResource("13_83b05")
+
+[node name="FihMarker" type="ColorRect" parent="FishingBar" unique_id=2144376238]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 22.0
+offset_bottom = 10.0

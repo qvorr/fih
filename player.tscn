@@ -34,10 +34,10 @@ size = Vector2(66.68814, 61.965973)
 size = Vector2(44.897957, 42.066322)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58877"]
-size = Vector2(19.658182, 102.04083)
+size = Vector2(19.658182, 130.61227)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdlqx"]
-size = Vector2(19.459194, 86.77551)
+size = Vector2(19.459194, 135.75513)
 
 [node name="Player" type="CharacterBody2D" unique_id=1404003345]
 position = Vector2(32.915, 35.93)
@@ -102,14 +102,14 @@ disabled = true
 [node name="BlockHigh" type="Area2D" parent="Katana" unique_id=1263869760]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Katana/BlockHigh" unique_id=1231492728]
-position = Vector2(55.823975, -34.408173)
+position = Vector2(55.823975, -20.12246)
 shape = SubResource("RectangleShape2D_58877")
 disabled = true
 
 [node name="BlockLow" type="Area2D" parent="Katana" unique_id=526053167]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Katana/BlockLow" unique_id=495452172]
-position = Vector2(55.923462, 60)
+position = Vector2(55.923462, 35.51021)
 shape = SubResource("RectangleShape2D_fdlqx")
 disabled = true
 
